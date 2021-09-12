@@ -1,0 +1,3 @@
+Name: Yongzheng Qi
+GitHub Name: qiyo
+Link: https://github.com/YongzQi/cs5520-Android-app
