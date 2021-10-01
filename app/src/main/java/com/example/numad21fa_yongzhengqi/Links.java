@@ -6,6 +6,9 @@ import android.net.Uri;
 import android.util.Patterns;
 import android.webkit.URLUtil;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class Links {
     public final String linkName;
     public final String url;
@@ -29,6 +32,12 @@ public class Links {
     }
 
     public boolean isValid() {
-        return Patterns.WEB_URL.matcher(url).matches();
+        try {
+            new URL(url);
+            return URLUtil.isValidUrl(url) && Patterns.WEB_URL.matcher(url).matches();
+        } catch (MalformedURLException e) {
+
+        }
+        return false;
     }
 }

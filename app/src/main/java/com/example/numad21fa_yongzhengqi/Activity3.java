@@ -70,6 +70,7 @@ public class Activity3 extends AppCompatActivity {
         alertDialog = builder.create();
     }
 
+    // Handling Orientation Changes on Android
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         int size = itemList == null ? 0 : itemList.size();
@@ -77,8 +78,8 @@ public class Activity3 extends AppCompatActivity {
 
         // Need to generate unique key for each item
         for (int i = 0; i < size; i++) {
-            outState.putString(KEY_OF_INSTANCE + i + "0", itemList.get(i).linkName);
-            outState.putString(KEY_OF_INSTANCE + i + "1", itemList.get(i).url);
+            outState.putString(KEY_OF_INSTANCE + i + "0", itemList.get(i).getLinkName());
+            outState.putString(KEY_OF_INSTANCE + i + "1", itemList.get(i).getUrl());
         }
         super.onSaveInstanceState(outState);
     }
@@ -89,7 +90,20 @@ public class Activity3 extends AppCompatActivity {
     }
 
     private void initialItemData(Bundle savedInstanceState) {
-        ArrayList<Links> list = new ArrayList<>();
+        if(savedInstanceState != null && savedInstanceState.containsKey(NUMBER_OF_ITEMS)){
+            if(itemList == null || itemList.size() == 0){
+
+                int size = savedInstanceState.getInt(NUMBER_OF_ITEMS);
+
+                for(int i=0; i<size; i++){
+                    String itemName = savedInstanceState.getString(KEY_OF_INSTANCE+i+"0");
+                    String itemDesc = savedInstanceState.getString(KEY_OF_INSTANCE+i+"1");
+
+                    Links links = new Links(itemName, itemDesc);
+                    itemList.add(links);
+                }
+            }
+        }
     }
 
     private void createRecyclerView() {
@@ -102,8 +116,6 @@ public class Activity3 extends AppCompatActivity {
 
         recyclerView.setAdapter(rviewAdapter);
         recyclerView.setLayoutManager(rLayoutManger);
-
-
     }
 
     public void addItem() {
