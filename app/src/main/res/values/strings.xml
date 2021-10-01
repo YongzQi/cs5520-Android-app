@@ -16,4 +16,15 @@
     <string name="pressedD">Pressed: D</string>
     <string name="pressedE">Pressed: E</string>
     <string name="pressedF">Pressed: F</string>
+    <string name="linkcollector">Link Collector</string>
+    <string name="todo">add</string>
+    <string name="itemname">Name</string>
+    <string name="itemlink">Link</string>
+    <string name="item_name">Item name</string>
+    <string name="item_description">Description</string>
+    <string name="link_details">Enter Link Details</string>
+    <string name="link_name">Name:</string>
+    <string name="link_url">Url:</string>
+    <string name="Http">http://</string>
+
 </resources>
