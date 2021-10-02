@@ -121,7 +121,6 @@ public class Activity3 extends AppCompatActivity {
     public void addItem() {
         itemName.getText();
         itemLink.setText(getString(R.string.Http));
-        itemName.requestFocus();
         alertDialog.show();
     }
 
