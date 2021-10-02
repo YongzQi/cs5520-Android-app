@@ -7,11 +7,13 @@ import android.util.Patterns;
 import android.webkit.URLUtil;
 
 import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Locale;
 
 public class Links {
     public final String linkName;
-    public final String url;
+    public String url;
 
     public Links(String linkName, String url) {
         this.linkName = linkName;
@@ -32,12 +34,15 @@ public class Links {
     }
 
     public boolean isValid() {
+        if (url.startsWith("www.")) {
+            url = "http://" + url;
+        }
         try {
             new URL(url);
-            return URLUtil.isValidUrl(url) && Patterns.WEB_URL.matcher(url).matches();
         } catch (MalformedURLException e) {
-
+            return false;
         }
-        return false;
+        return Patterns.WEB_URL.matcher(url.toLowerCase()).matches();
+
     }
 }
