@@ -34,7 +34,7 @@ public class Links {
     }
 
     public boolean isValid() {
-        if (url.startsWith("www.")) {
+        if (!url.startsWith("http")) {
             url = "http://" + url;
         }
         try {
