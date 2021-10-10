@@ -11,6 +11,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private Button button;
     private Button linkButton;
+    private Button locator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,14 @@ public class MainActivity extends AppCompatActivity {
                 openActivity3();
             }
         });
+
+        locator = findViewById(R.id.button10);
+        locator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openLocator();
+            }
+        });
     }
 
     public void displayToast(View v) {
@@ -44,6 +53,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void openActivity3() {
         Intent intent = new Intent(this, Activity3.class);
+        startActivity(intent);
+    }
+
+    public void openLocator() {
+        Intent intent = new Intent(this, Locator.class);
         startActivity(intent);
     }
 }

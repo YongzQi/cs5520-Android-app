@@ -26,5 +26,9 @@
     <string name="link_name">Name:</string>
     <string name="link_url">Url:</string>
     <string name="Http">http://</string>
+    <string name="locator">Locator</string>
+    <string name="get_location">Location</string>
+    <string name="text_view_location">Please click the location button</string>
+    <string name="permission_denied">Permission is not granted, requesting</string>
 
 </resources>
