@@ -2,11 +2,9 @@ package com.example.numad21fa_yongzhengqi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -20,13 +18,10 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.util.Scanner;
-import android.view.View.OnClickListener;
 
 public class AtYourServiceActivity extends AppCompatActivity {
 
     private ProgressBar progressBar;
-    int count = 1;
-    Button btnJoke;
     private TextView question;
     private TextView joke;
 
@@ -37,20 +32,19 @@ public class AtYourServiceActivity extends AppCompatActivity {
         progressBar = (ProgressBar)findViewById(R.id.progressBar);
         question = findViewById(R.id.question);
         joke = findViewById(R.id.joke);
-        new jokeTask().execute();
     }
 
-//    public void getJoke(View view) {
-//        jokeTask task = new jokeTask();
-//        task.execute();
-//    }
+    public void getJoke(View view) {
+        jokeTask task = new jokeTask();
+        task.execute();
+    }
 
     private class jokeTask extends AsyncTask<Void, Void, String[]> {
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            //inProgress.setTitle(R.string.in_progress);
+            progressBar.setVisibility(View.VISIBLE);
             question.setText("");
             joke.setText("");
         }
@@ -97,9 +91,6 @@ public class AtYourServiceActivity extends AppCompatActivity {
             super.onPostExecute(s);
             progressBar.setVisibility(View.GONE);
             question.setText(s[0]);
-//            if (s.length == 1) {
-//                return;
-//            }
             joke.setText(s[1]);
         }
     }

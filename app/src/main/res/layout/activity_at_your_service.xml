@@ -21,32 +21,33 @@
 
     <TextView
         android:id="@+id/question"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="238dp"
+        android:layout_height="68dp"
+        android:gravity="center"
         android:fontFamily="@font/amiko"
         android:indeterminateOnly="true"
         android:keepScreenOn="true"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button12"
-        app:layout_constraintVertical_bias="0.359" />
+        app:layout_constraintVertical_bias="0.371" />
 
     <TextView
         android:id="@+id/joke"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="236dp"
+        android:layout_height="77dp"
+        android:gravity="center"
         android:fontFamily="@font/amiko"
         android:freezesText="true"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button12"
-        app:layout_constraintVertical_bias="0.572" />
+        app:layout_constraintVertical_bias="0.628" />
 
     <ProgressBar
         android:id="@+id/progressBar"
