@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/font/amiko.xml" value="0.36770833333333336" />
         <entry key="app/src/main/res/layout-land/activity_main2.xml" value="0.16049382716049382" />
+        <entry key="app/src/main/res/layout/activity_at_your_service.xml" value="0.25769927536231885" />
         <entry key="app/src/main/res/layout/activity_locator.xml" value="0.25769927536231885" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15932117527862208" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.18958333333333333" />

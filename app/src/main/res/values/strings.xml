@@ -30,5 +30,9 @@
     <string name="get_location">Location</string>
     <string name="text_view_location">Please click the location button</string>
     <string name="permission_denied">Permission is not granted, requesting</string>
+    <string name="at_your_service">At Your Service</string>
+    <string name="btnForJoke">Click For Joke</string>
+    <string name="joke">Joke</string>
+    <string name="in_progress">Loading......</string>
 
 </resources>
